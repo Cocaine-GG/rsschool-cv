@@ -86,6 +86,9 @@ async function actionHandler(ctx){
 
 * Front-end developer (september 2021) [OpenClassRooms](https://openclassrooms.com/)
 * Web Developer (fev 2020 - may 2020) [WebForce 3](https://www.wf3.fr/)
+* Youtube
+* Udemy
+* CodeWars
 
 ****
 
