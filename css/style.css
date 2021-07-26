@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f3f3f3;
+}
+
+li {
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    border-bottom: 2px solid #3f3f3f;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.container {
+    width: 1140px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #3f3f3f;
+    padding: 20px 0;
+}
+
+.header h1 {
+    font-size: 3rem;
+}
+
+.header h1 span {
+    color: tomato;
+}
+
+.header img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.about strong {
+    text-align: center;
+}
+
+.code pre {
+    background: #3f3f3f;
+    border-radius: 5px;
+    padding: 10px 0;
+    color: #f3f3f3;
+}
+.footer__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.rss-logo {
+    width: 100px;
+    height: 50px;
+}
