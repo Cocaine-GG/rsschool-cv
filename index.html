@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>KONDRATIUK Daniel CV</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Daniiel <span>KONDRATIUK</span></h1>
+      <img src="https://dk67-portfolio.web.app/myPhoto.c1a656d1.jfif" alt="Daniiel Kondratiuk Profile Photo">
+    </header>
+    <section class="contact">
+      <h2 class="contact__title">Contacts</h2>
+      <ul class="contact__list">
+        <li><a href="tel:+33752373809">+33 7 52 37 38 09</a></li>
+        <li><a href="mailto:d.kondratiuk67@gmail.com">d.kondratiuk67@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/daniel-kondratiuk-5b51551a2/">Linkedin</a></li>
+        <li><a href="https://t.me/cocaine_gg">Telegram</a></li>
+        <li><a href="https://dk67-portfolio.web.app/">My Portfolio</a></li>
+      </ul>
+    </section>
+    <section class="about">
+      <h2 class="about__title">About</h2>
+      <strong>I see the goal, but I see no obstacles</strong>
+      <ul class="about__list">
+        <li>Autonomy</li>
+        <li>Perseverance</li>
+        <li>Adaptability</li>
+        <li>Curiosity</li>
+      </ul>
+    </section>
+    <section class="skills">
+      <h2 class="skills__title">Skills</h2>
+      <ul class="skills__list">
+        <li>JavaScript / ReactJS / NodeJS</li>
+        <li>PHP / Laravel / Symfony</li>
+        <li>HTML / CSS</li>
+        <li>SQL</li>
+      </ul>
+    </section>
+    <section class="code">
+      <h2 class="code__title">Example Code</h2>
+      <h3><a href="https://github.com/Cocaine-GG/telegram-bot-coin-galaxy">Telegram Bot</a></h3>
+      <pre>
+        async function actionHandler(ctx){
+          console.log(ctx.from)
+          let firstValue, secondValue
+          if (ctx.update.callback_query !== undefined) {
+            [firstValue, secondValue] = ctx.update.callback_query.data.split(' ')
+          }
+          if (ctx.message !== undefined) {
+            [firstValue, secondValue] = ctx.message.text.split(' ')
+          }
+
+          const findUser = USERS.find(el=>el.id===ctx.from.id)
+          if(!findUser){
+            USERS.push(ctx.from)
+            savedUsers(USERS)
+          }
+
+          const url = process.env.API_URL + firstValue + '_' + secondValue
+          if (firstValue && secondValue) {
+            try {
+              const {data} = await axios.get(url)
+              const [bidsPrice, bidsCount] = data.bids[0]
+              const [asksPrice, asksCount] = data.asks[0]
+
+              return ctx.replyWithMarkdown(`Вы можете купить ${firstValue.toUpperCase()}
+        Цена за 1 ${firstValue.toUpperCase()} = *${bidsPrice} ${secondValue.toUpperCase()}*
+        По текущей цене доступно *${bidsCount} ${firstValue.toUpperCase()}*
+
+        Вы можете продать ${firstValue.toUpperCase()}
+        За 1 ${firstValue.toUpperCase()} вы получите *${asksPrice} ${secondValue.toUpperCase()}*
+        По текущей цене можно продать *${asksCount} ${firstValue.toUpperCase()}*
+        `)
+            } catch (err) {
+              return ctx.replyWithMarkdown(`Данной валютной *${firstValue} ${secondValue}*  не существует
+        Попробуйте изменить порядок
+        Например *${secondValue} ${firstValue}*`)
+            }
+          }
+          return ctx.replyWithMarkdown(`Введите коректно пару валют
+        Например *WEC USD*`)
+        }
+      </pre>
+    </section>
+    <section class="education">
+      <h2 class="education__title">Education</h2>
+      <ul class="education__list">
+        <li>Front-end developer (september 2021) <a href="https://openclassrooms.com/">OpenClassRooms</a></li>
+        <li>Web Developer (fev 2020 - may 2020) <a href="https://www.wf3.fr/">WebForce 3</a></li>
+        <li>Youtube</li>
+        <li>Udemy</li>
+        <li>CodeWars</li>
+      </ul>
+    </section>
+    <section class="work">
+      <h2 class="work__title">Work Experience</h2>
+      <ul class="work__list">
+        <li>6 months internship at <a href="https://www.myclientisrich.com/">My Client Is Rich</a></li>
+      </ul>
+    </section>
+    <section class="language">
+      <h2 class="language__title">Language</h2>
+      <ul class="language__list">
+        <li>English: <strong>Elementary / Pre-Intermediate</strong></li>
+        <li>French: <strong>Intermediate</strong></li>
+      </ul>
+    </section>
+    <footer class="footer">
+      <ul class="footer__list">
+        <li>
+          <a href="https://rs.school/js/">
+            <img class="rss-logo" src="https://app.rs.school/static/images/logo-rsschool3.png" alt="RS School Logo">
+          </a>
+        </li>
+        <li><a href="https://github.com/cocaine-gg" class="my-github-link">Follow me on GitHub</a></li>
+        <li>2021</li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>

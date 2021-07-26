@@ -1,1 +1,1 @@
-https://cocaine-gg.github.io/rsschool-cv/
+**[CV](https://cocaine-gg.github.io/rsschool-cv/)**
